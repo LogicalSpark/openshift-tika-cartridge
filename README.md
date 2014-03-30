@@ -24,11 +24,11 @@ If you would like to try out the Apache Tika JAXRS server you can find a deploye
 	
 	http://tikaserver-categorize.rhcloud.com/
 
-To test extracting the contents of a file, you can use the following:
+To extract the contents of a file, you can use the following:
 
 	curl -T <file> http://tikaserver-categorize.rhcloud.com/tika
 
-To test extracting the metadata of a file, you can use the following:
+To extract the metadata of a file, you can use the following:
 
 	curl -T <file> http://tikaserver-categorize.rhcloud.com/tika
 
