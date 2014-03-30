@@ -1,0 +1,49 @@
+Name: tika
+Cartridge-Short-Name: TIKA
+Display-Name: TIKA Cartridge
+Description: "Apache Tika is content analysis framework. This cartridge provides access to its server component."
+Version: '1.6'
+License: "ASL 2.0"
+License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
+Vendor: Categorize Limited
+Cartridge-Version: 0.0.1
+Cartridge-Vendor: categorize
+Categories:
+  - service
+  - web_framework
+Provides:
+  - tika
+Group-Overrides:
+  - components:
+    - tika
+    - web_proxy
+Scaling:
+  Min: 1
+  Max: -1
+Cart-Data:
+  - Key: OPENSHIFT_TIKA_PORT
+    Type: environment
+    Description: "Internal port to which the web-framework binds to."
+  - Key: OPENSHIFT_TIKA_IP
+    Type: environment
+    Description: "Internal IP to which the web-framework binds to."
+Publishes:
+  get-doc-root:
+    Type: "FILESYSTEM:doc-root"
+  publish-http-url:
+    Type: "NET_TCP:httpd-proxy-info"
+  publish-gear-endpoint:
+    Type: "NET_TCP:gear-endpoint-info"
+Subscribes:
+  set-db-connection-info:
+    Type: "NET_TCP:db:connection-info"
+    Required: false
+Endpoints:
+  - Private-IP-Name:   IP
+    Private-Port-Name: PORT
+    Private-Port:      15001
+    Public-Port-Name:  PROXY_PORT
+    Mappings:
+      - Frontend:      ""
+        Backend:       ""
+        Options:       { websocket: false }

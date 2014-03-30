@@ -1,0 +1,74 @@
+#!/bin/bash -e
+
+PATH=/bin/:/usr/bin:$PATH
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+TIKA_PID_FILE=$OPENSHIFT_TIKA_DIR/run/tika.pid
+
+# Kill the process given by $1 and its children
+function killtree {
+    local _pid=$1
+    for _child in $(ps -o pid --no-headers --ppid ${_pid}); do
+        killtree ${_child}
+    done
+    echo kill -9 ${_pid}
+    kill -9 ${_pid}
+}
+
+function isrunning {
+    # Check for running app
+    if [ -f "$TIKA_PID_FILE" ]; then
+      jbpid=$(cat $TIKA_PID_FILE);
+      running=`/bin/ps --no-headers --pid $jbpid`
+      if test -n "$running";
+      then
+        return 0
+      fi
+    fi
+    # not running
+    return 1
+}
+
+function start {
+    # Check for running app
+    if isrunning; then
+        echo "The Tika cartridge is already running" 1>&2
+    else
+        nohup java -jar $OPENSHIFT_TIKA_DIR/usr/bin/tika-server-1.6-20140328.jar -h $OPENSHIFT_TIKA_IP -p $OPENSHIFT_TIKA_PORT &
+        PROCESS_ID=$!
+        echo $PROCESS_ID > $TIKA_PID_FILE
+    fi
+}
+
+function stop {
+    if ! isrunning; then
+        echo "The Tika cartridge is already stopped" 1>&2
+    elif [ -f "$TIKA_PID_FILE" ]; then
+        pid=$(cat $TIKA_PID_FILE);
+        echo "Sending SIGTERM to tika:$pid ..." 1>&2
+        killtree $pid
+    else
+        echo "Failed to locate Tika PID File" 1>&2
+    fi
+}
+
+function catchall {
+    echo "not yet implemented"
+}
+
+case "$1" in
+  start)       start ;;
+  stop)        stop ;;
+  restart)     start
+               stop ;;
+  status)      status ;;
+  reload)      catchall ;;
+  tidy)        catchall ;;
+  pre-build)   catchall ;;
+  build)       catchall ;;
+  deploy)      catchall ;;
+  post-deploy) catchall ;;
+  *)           exit 0
+esac
+
+exit 0
