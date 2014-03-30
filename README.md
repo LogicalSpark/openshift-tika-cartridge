@@ -20,7 +20,19 @@ To address these two issues the author (an Apache Tika commiter) has created a c
 
 ### Tika Server Usage
 
-You can read about the TIKA JAXRS server [here](http://wiki.apache.org/tika/TikaJAXRS).
+If you would like to try out the Apache Tika JAXRS server you can find a deployed instance using this cartridge at:
+	
+	http://tikaserver-categorize.rhcloud.com/
+
+To test extracting the contents of a file, you can use the following:
+
+	curl -T <file> http://tikaserver-categorize.rhcloud.com/tika
+
+To test extracting the metadata of a file, you can use the following:
+
+	curl -T <file> http://tikaserver-categorize.rhcloud.com/tika
+
+You can read more about the TIKA JAXRS server and it's commands [here](http://wiki.apache.org/tika/TikaJAXRS).
 
 ### Support
 
