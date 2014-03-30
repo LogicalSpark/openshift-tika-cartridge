@@ -1,4 +1,4 @@
-## OpenShift Apache Tika Cartridge
+## OpenShift Apache Tika Server Cartridge
 
 A cartridge for OpenShift that provides access to the Apache Tika JAXRS Server. This was prepared for a talk at JBUG Scotland, April 2014.
 
@@ -16,7 +16,11 @@ It has been developed to support scaling with a scaleable application, so if you
 
 The current release (1.5) does not currently has two issues stopping it being useful in an OpenShift environment; its use of binding to the public interface and its lack of an endpoint on the root of the servers URL.
 
-To address these two issues the author has created a custom build of Apache Tika, whilst they are addressed within the trunk code base. Once incorporated the cartridge will use a source code build of the latest trunk.
+To address these two issues the author (an Apache Tika commiter) has created a custom binary build of Apache Tika based on the trunk on the 28th of March 2014 for use whilst the issues are addressed within the trunk code base. Once incorporated the cartridge will use a source code build of the latest trunk.
+
+### Tika Server Usage
+
+You can read about the TIKA JAXRS server [here](http://wiki.apache.org/tika/TikaJAXRS).
 
 ### Support
 
