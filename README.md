@@ -8,6 +8,10 @@ To install this cartridge use the cartridge reflector when creating an applicati
 
 	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=Categorize/openshift-tika-cartridge
 
+It has been developed to support scaling with a scaleable application, so if you would like use it in this way you can use the -s flag
+
+	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=Categorize/openshift-tika-cartridge -s
+
 ### Tika Version
 
 The current release (1.5) does not currently has two issues stopping it being useful in an OpenShift environment; its use of binding to the public interface and its lack of an endpoint on the root of the servers URL.
