@@ -30,7 +30,7 @@ To extract the contents of a file, you can use the following:
 
 To extract the metadata of a file, you can use the following:
 
-	curl -T <file> http://tikaserver-categorize.rhcloud.com/tika
+	curl -T <file> http://tikaserver-categorize.rhcloud.com/meta
 
 You can read more about the TIKA JAXRS server and it's commands [here](http://wiki.apache.org/tika/TikaJAXRS).
 
