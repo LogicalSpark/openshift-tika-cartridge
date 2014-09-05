@@ -6,31 +6,29 @@ A cartridge for OpenShift that provides access to the Apache Tika JAXRS Server. 
 
 To install this cartridge use the cartridge reflector when creating an application
 
-	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=Categorize/openshift-tika-cartridge
+	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=LogicalSpark/openshift-tika-cartridge
 
 It has been developed to support scaling with a scaleable application, so if you would like use it in this way you can use the -s flag
 
-	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=Categorize/openshift-tika-cartridge -s
+	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=LogicalSpark/openshift-tika-cartridge -s
 
 ### Tika Version
 
-The current release (1.5) does not currently has two issues stopping it being useful in an OpenShift environment; its use of binding to the public interface and its lack of an endpoint on the root of the servers URL.
-
-To address these two issues the author (an Apache Tika commiter) has created a custom binary build of Apache Tika based on the trunk on the 28th of March 2014 for use whilst the issues are addressed within the trunk code base. Once incorporated the cartridge will use a source code build of the latest trunk.
+This cartridge supports Apache Tika Version 1.6, released on 5th of September 2014.
 
 ### Tika Server Usage
 
 If you would like to try out the Apache Tika JAXRS server you can find a deployed instance using this cartridge at:
 	
-	http://tikaserver-categorize.rhcloud.com/
+	http://tikaserver-logicalspark.rhcloud.com/
 
 To extract the contents of a file, you can use the following:
 
-	curl -T <file> http://tikaserver-categorize.rhcloud.com/tika
+	curl -T <file> http://tikaserver-logicalspark.rhcloud.com/tika
 
 To extract the metadata of a file, you can use the following:
 
-	curl -T <file> http://tikaserver-categorize.rhcloud.com/meta
+	curl -T <file> http://tikaserver-logicalspark.rhcloud.com/meta
 
 You can read more about the TIKA JAXRS server and it's commands [here](http://wiki.apache.org/tika/TikaJAXRS).
 
