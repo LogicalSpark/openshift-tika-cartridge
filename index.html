@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>openshift-tika-cartridge by Categorize</title>
+    <title>openshift-tika-cartridge by LogicalSpark</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -18,13 +18,13 @@
         <h1>openshift-tika-cartridge</h1>
         <p>An OpenShift Cartridge for the Apache Tika JAXRS Server</p>
 
-        <p class="view"><a href="https://github.com/Categorize/openshift-tika-cartridge">View the Project on GitHub <small>Categorize/openshift-tika-cartridge</small></a></p>
+        <p class="view"><a href="https://github.com/LogicalSpark/openshift-tika-cartridge">View the Project on GitHub <small>LogicalSpark/openshift-tika-cartridge</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/Categorize/openshift-tika-cartridge/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Categorize/openshift-tika-cartridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Categorize/openshift-tika-cartridge">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/LogicalSpark/openshift-tika-cartridge/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/LogicalSpark/openshift-tika-cartridge/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/LogicalSpark/openshift-tika-cartridge">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
@@ -38,37 +38,35 @@
 
 <p>To install this cartridge use the cartridge reflector when creating an application</p>
 
-<pre><code>rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=Categorize/openshift-tika-cartridge
+<pre><code>rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=LogicalSpark/openshift-tika-cartridge
 </code></pre>
 
 <p>It has been developed to support scaling with a scaleable application, so if you would like use it in this way you can use the -s flag</p>
 
-<pre><code>rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=Categorize/openshift-tika-cartridge -s
+<pre><code>rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=LogicalSpark/openshift-tika-cartridge -s
 </code></pre>
 
 <h3>
 <a name="tika-version" class="anchor" href="#tika-version"><span class="octicon octicon-link"></span></a>Tika Version</h3>
 
-<p>The current release (1.5) does not currently has two issues stopping it being useful in an OpenShift environment; its use of binding to the public interface and its lack of an endpoint on the root of the servers URL.</p>
-
-<p>To address these two issues the author (an Apache Tika commiter) has created a custom binary build of Apache Tika based on the trunk on the 28th of March 2014 for use whilst the issues are addressed within the trunk code base. Once incorporated the cartridge will use a source code build of the latest trunk.</p>
+<p>This cartridge supports Apache Tika Version 1.6, released on 5th of September 2014.</p>
 
 <h3>
 <a name="tika-server-usage" class="anchor" href="#tika-server-usage"><span class="octicon octicon-link"></span></a>Tika Server Usage</h3>
 
 <p>If you would like to try out the Apache Tika JAXRS server you can find a deployed instance using this cartridge at:</p>
 
-<pre><code>http://tikaserver-categorize.rhcloud.com/
+<pre><code>http://tikaserver-logicalspark.rhcloud.com/
 </code></pre>
 
 <p>To extract the contents of a file, you can use the following:</p>
 
-<pre><code>curl -T &lt;file&gt; http://tikaserver-categorize.rhcloud.com/tika
+<pre><code>curl -T &lt;file&gt; http://tikaserver-logicalspark.rhcloud.com/tika
 </code></pre>
 
 <p>To extract the metadata of a file, you can use the following:</p>
 
-<pre><code>curl -T &lt;file&gt; http://tikaserver-categorize.rhcloud.com/tika
+<pre><code>curl -T &lt;file&gt; http://tikaserver-logicalspark.rhcloud.com/meta
 </code></pre>
 
 <p>You can read more about the TIKA JAXRS server and it's commands <a href="http://wiki.apache.org/tika/TikaJAXRS">here</a>.</p>
@@ -79,7 +77,7 @@
 <p>This cartridge is provided provided "as is", with absolutely no warranty expressed or implied. Any use is at your own risk.</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/Categorize">Categorize</a></p>
+        <p>This project is maintained by <a href="https://github.com/LogicalSpark">LogicalSpark</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
