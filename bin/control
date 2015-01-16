@@ -34,7 +34,7 @@ function start {
     if isrunning; then
         echo "The Tika cartridge is already running" 1>&2
     else
-        nohup java -jar $OPENSHIFT_TIKA_DIR/run/tika-server-1.6.jar -h $OPENSHIFT_TIKA_IP -p $OPENSHIFT_TIKA_PORT &
+        nohup java -jar $OPENSHIFT_TIKA_DIR/run/tika-server-1.7.jar -h $OPENSHIFT_TIKA_IP -p $OPENSHIFT_TIKA_PORT &
         PROCESS_ID=$!
         echo $PROCESS_ID > $TIKA_PID_FILE
     fi
