@@ -2,7 +2,7 @@ Name: tika
 Cartridge-Short-Name: TIKA
 Display-Name: TIKA Cartridge
 Description: "Apache Tika is content analysis framework. This cartridge provides access to its server component."
-Version: '1.7'
+Version: '1.10'
 License: "ASL 2.0"
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Vendor: Apache Software Foundation
