@@ -14,7 +14,7 @@ It has been developed to support scaling with a scaleable application, so if you
 
 ### Tika Version
 
-This cartridge supports Apache Tika Version 1.7, released on 15th of January 2015.
+This cartridge supports Apache Tika Version 1.10.
 
 ### Tika Server Usage
 
